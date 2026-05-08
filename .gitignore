@@ -1,0 +1,30 @@
+# Data
+thucnews.zip
+data/THUCNews/data/train.txt
+data/THUCNews/data/dev.txt
+data/THUCNews/data/test.txt
+data/THUCNews/data/*.npz
+data/THUCNews/data/*.pkl
+data/processed/*.pkl
+
+# Models
+output/models/*.model
+output/models/*.kv
+output/models/*.npy
+output/models/*.pt
+
+# LaTeX aux
+report/*.aux
+report/*.out
+report/*.log
+report/*.pdf
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# OS
+Thumbs.db
+.DS_Store
