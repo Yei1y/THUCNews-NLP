@@ -25,6 +25,9 @@ __pycache__/
 *.pyo
 .env
 
+# Claude Code
+.claude/
+
 # OS
 Thumbs.db
 .DS_Store
