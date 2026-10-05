@@ -12,10 +12,11 @@ import jieba
 from collections import Counter
 
 # ---------- 路径配置 ----------
-DATA_DIR = os.path.join('..', 'data', 'THUCNews', 'data')
-PROCESSED_DIR = os.path.join('..', 'data', 'processed')
-STOPWORDS_PATH = os.path.join('..', 'data', 'stopwords.txt')
-OUTPUT_DIR = os.path.join('..', 'output')
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(ROOT, 'data', 'THUCNews', 'data')
+PROCESSED_DIR = os.path.join(ROOT, 'data', 'processed')
+STOPWORDS_PATH = os.path.join(ROOT, 'data', 'stopwords.txt')
+OUTPUT_DIR = os.path.join(ROOT, 'output')
 os.makedirs(PROCESSED_DIR, exist_ok=True)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

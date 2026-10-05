@@ -14,9 +14,10 @@ from gensim.models import Word2Vec
 from collections import Counter
 
 # ---------- 路径 ----------
-PROCESSED_PATH = os.path.join('..', 'data', 'processed', 'processed.pkl')
-MODEL_DIR = os.path.join('..', 'output', 'models')
-FIGURE_DIR = os.path.join('..', 'output', 'figures')
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROCESSED_PATH = os.path.join(ROOT, 'data', 'processed', 'processed.pkl')
+MODEL_DIR = os.path.join(ROOT, 'output', 'models')
+FIGURE_DIR = os.path.join(ROOT, 'output', 'figures')
 os.makedirs(MODEL_DIR, exist_ok=True)
 os.makedirs(FIGURE_DIR, exist_ok=True)
 

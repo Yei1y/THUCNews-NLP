@@ -20,8 +20,9 @@ for _fp in [r'C:\Windows\Fonts\simhei.ttf', r'C:\Windows\Fonts\msyh.ttc']:
 matplotlib.rcParams['axes.unicode_minus'] = False
 
 # ---------- 路径 ----------
-PROCESSED_PATH = os.path.join('..', 'data', 'processed', 'processed.pkl')
-FIGURE_DIR = os.path.join('..', 'output', 'figures')
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROCESSED_PATH = os.path.join(ROOT, 'data', 'processed', 'processed.pkl')
+FIGURE_DIR = os.path.join(ROOT, 'output', 'figures')
 os.makedirs(FIGURE_DIR, exist_ok=True)
 
 # 种子

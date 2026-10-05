@@ -25,9 +25,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # ---------- 路径 ----------
-PROCESSED_PATH = os.path.join('..', 'data', 'processed', 'processed.pkl')
-FIGURE_DIR = os.path.join('..', 'output', 'figures')
-TABLE_DIR = os.path.join('..', 'output', 'tables')
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROCESSED_PATH = os.path.join(ROOT, 'data', 'processed', 'processed.pkl')
+FIGURE_DIR = os.path.join(ROOT, 'output', 'figures')
+TABLE_DIR = os.path.join(ROOT, 'output', 'tables')
 os.makedirs(FIGURE_DIR, exist_ok=True)
 os.makedirs(TABLE_DIR, exist_ok=True)
 
@@ -93,7 +94,7 @@ def plot_sentiment_distribution(sentiment_df, class_names, save_path):
     ax.set_xticklabels(class_names, rotation=30, ha='right')
     ax.set_xlabel('类别')
     ax.set_ylabel('样本数')
-    ax.set_title('各类别情感极性分布')
+    ax.set_title('Sentiment Polarity Distribution by Category')
     ax.legend()
     plt.tight_layout()
     plt.savefig(save_path, dpi=300, bbox_inches='tight')
@@ -176,7 +177,7 @@ def main():
                                        os.path.join(FIGURE_DIR, 'fig_sentiment_scores.png'))
 
     # 保存数据
-    sentiment_df.to_pickle(os.path.join('..', 'data', 'processed', 'sentiment_results.pkl'))
+    sentiment_df.to_pickle(os.path.join(ROOT, 'data', 'processed', 'sentiment_results.pkl'))
     print(f'  情感结果保存至: data/processed/sentiment_results.pkl')
 
     # 摘要统计

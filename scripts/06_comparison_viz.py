@@ -20,10 +20,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # ---------- 路径 ----------
-PROCESSED_PATH = os.path.join('..', 'data', 'processed', 'processed.pkl')
-SENTIMENT_PATH = os.path.join('..', 'data', 'processed', 'sentiment_results.pkl')
-FIGURE_DIR = os.path.join('..', 'output', 'figures')
-TABLE_DIR = os.path.join('..', 'output', 'tables')
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROCESSED_PATH = os.path.join(ROOT, 'data', 'processed', 'processed.pkl')
+SENTIMENT_PATH = os.path.join(ROOT, 'data', 'processed', 'sentiment_results.pkl')
+FIGURE_DIR = os.path.join(ROOT, 'output', 'figures')
+TABLE_DIR = os.path.join(ROOT, 'output', 'tables')
 os.makedirs(FIGURE_DIR, exist_ok=True)
 os.makedirs(TABLE_DIR, exist_ok=True)
 

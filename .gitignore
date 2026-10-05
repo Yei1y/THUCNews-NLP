@@ -7,17 +7,19 @@ data/THUCNews/data/*.npz
 data/THUCNews/data/*.pkl
 data/processed/*.pkl
 
-# Models
+# Models（体积较大，不入版本库；需按 README 第六节重新生成）
 output/models/*.model
 output/models/*.kv
 output/models/*.npy
 output/models/*.pt
 
-# LaTeX aux
+# LaTeX aux（paper.pdf 需要交付，故不忽略）
 report/*.aux
 report/*.out
 report/*.log
-report/*.pdf
+report/*.fls
+report/*.fdb_latexmk
+report/*.synctex.gz
 
 # Python
 __pycache__/
@@ -25,7 +27,11 @@ __pycache__/
 *.pyo
 .env
 
-# Claude Code
+# 工作过程用的辅助文档（不随仓库分发）
+CLAUDE.md
+findings.md
+progress.md
+task_plan.md
 .claude/
 
 # OS
