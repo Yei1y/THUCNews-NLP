@@ -108,13 +108,13 @@ $$\mathbf{h}_{1:T} = \mathrm{LSTM}(\mathbf{E}\,x_{1:T}), \qquad
 \tilde{\mathbf{h}} = \frac{\sum_{t=1}^{T} m_t \mathbf{h}_t}{\sum_{t=1}^{T} m_t}, \qquad
 m_t = \mathbb{1}[x_t \neq \texttt{<PAD>}]$$
 
-$$\hat{y} = \mathrm{softmax}\big(\mathbf{W}\,\mathrm{Dropout}(\tilde{\mathbf{h}}) + \mathbf{b}\big)$$
+$$\hat{y} = \mathrm{softmax}\left(\mathbf{W}\,\mathrm{Dropout}(\tilde{\mathbf{h}}) + \mathbf{b}\right)$$
 
 即单层单向 LSTM 后接**基于掩码的平均池化**，再经 Dropout 0.5 与全连接层输出 10 类概率。优化器 Adam（lr = 0.01），batch = 128，最多 20 轮，验证损失连续 4 轮不下降即早停。
 
 ### 3.4 Naive Bayes 基线
 
-$$\hat{y} = \arg\max_{c}\Big[\log \pi_c + \sum_{w \in d} n_w \log \theta_{c,w}\Big]$$
+$$\hat{y} = \arg\max_{c}\left[\log \pi_c + \sum_{w \in d} n_w \log \theta_{c,w}\right]$$
 
 特征为 `CountVectorizer(max_features=10000)` + `TfidfTransformer`，分类器为 `MultinomialNB(alpha=1.0)`。
 
